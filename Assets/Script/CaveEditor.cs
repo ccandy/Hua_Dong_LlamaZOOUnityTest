@@ -9,6 +9,7 @@ public class NewBehaviourScript : Editor {
 
 	static int caveNum;
 	private string caveName;
+	private bool   trapCave;
 	public override void OnInspectorGUI()
 	{
 		
@@ -20,6 +21,7 @@ public class NewBehaviourScript : Editor {
 		myTarget.caveFillPrectage 	= EditorGUILayout.FloatField ("Cave FillPrectage", myTarget.caveFillPrectage);
 		myTarget.numOfSmooth 	    = EditorGUILayout.IntField ("Num Of Smooth",myTarget.numOfSmooth);
 		caveName 					= EditorGUILayout.TextField ("Cave Name",caveName);
+		trapCave 					= EditorGUILayout.Toggle ("trap Cave", trapCave);
 		if(GUILayout.Button("Generate Cave")){
 			myTarget.GenerateMap ();
 		}
@@ -42,8 +44,8 @@ public class NewBehaviourScript : Editor {
 			AssetDatabase.SaveAssets();
 			AssetDatabase.Refresh();
 
-			string fileName = "asset1"+ "" + caveName;
-			string fileLocation = "Assets/Resources/Prefabs/"+fileName+".prefab";
+			string fileName 			= "asset1"+ "" + caveName;
+			string fileLocation 		= "Assets/Resources/Prefabs/"+fileName+".prefab";
 			if (!AssetDatabase.IsValidFolder ("Assets/Resources")) {
 				AssetDatabase.CreateFolder ("Assets", "Resources");
 			}
@@ -51,10 +53,11 @@ public class NewBehaviourScript : Editor {
 				AssetDatabase.CreateFolder ("Assets/Resources", "Prefabs");
 			}
 				
-			GameObject gB = new GameObject ("Cave");
+			GameObject gB 				      = new GameObject ("Cave");
 			gB.AddComponent<Cave> ();
-			MeshFilter mF = gB.AddComponent<MeshFilter> ();
-			mF.sharedMesh = m;
+			gB.GetComponent<Cave> ().trapCave = trapCave;
+			MeshFilter mF 					  = gB.AddComponent<MeshFilter> ();
+			mF.sharedMesh 					  = m;
 
 			gB.AddComponent<MeshRenderer> ();
 
