@@ -17,9 +17,7 @@ public class NewBehaviourScript : Editor {
 		CaveGenerator myTarget 		= (CaveGenerator)target;
 		myTarget.caveWidth  		= EditorGUILayout.IntField ("Cave Width", myTarget.caveWidth);
 		myTarget.caveHeight 		= EditorGUILayout.IntField ("Cave Height", myTarget.caveHeight);
-		myTarget.smallestRegion 	= EditorGUILayout.IntField ("Cave SmallestRegion", myTarget.smallestRegion);
 		myTarget.caveFillPrectage 	= EditorGUILayout.FloatField ("Cave FillPrectage", myTarget.caveFillPrectage);
-		myTarget.numOfSmooth 	    = EditorGUILayout.IntField ("Num Of Smooth",myTarget.numOfSmooth);
 		caveName 					= EditorGUILayout.TextField ("Cave Name",caveName);
 		trapCave 					= EditorGUILayout.Toggle ("trap Cave", trapCave);
 		if(GUILayout.Button("Generate Cave")){

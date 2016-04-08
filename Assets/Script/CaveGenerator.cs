@@ -9,14 +9,11 @@ public class CaveGenerator : MonoBehaviour {
 
 	public int 		caveHeight;
 	public int 		caveWidth;
-	public int 		smallestRegion;
+	//public int 		smallestRegion;
 
 
 	[Range(0.0f,100.0f)]
 	public float 	caveFillPrectage;
-
-	[Range(0.0f, 20.0f)]
-	public int      numOfSmooth;
 
 
 	void Start () {
