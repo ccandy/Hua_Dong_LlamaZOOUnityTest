@@ -106,7 +106,7 @@ public class CaveGenerator : MonoBehaviour {
 		}
 		return numOfWalls;
 	} 
-
+	/*
 	List<CaveRoom> GetRoomList(){
 		List<CaveRoom> roomList = new List<CaveRoom> ();
 		int[,] mapFlags 		= new int[caveWidth, caveHeight];
@@ -125,7 +125,6 @@ public class CaveGenerator : MonoBehaviour {
 		}
 		return roomList;
 	}
-
 
 	CaveRoom GetRoom(int startX, int startY){
 		CaveRoom room 	 	 = new CaveRoom ();
@@ -159,7 +158,7 @@ public class CaveGenerator : MonoBehaviour {
 
 		return room;
 	}
-
+*/
 
 
 	bool isOutOfBounds(int x, int y){
@@ -341,8 +340,8 @@ public class CaveGenerator : MonoBehaviour {
 		}
 
 		return line;
-	}*/
-
+	}
+*/
 
 
 }
